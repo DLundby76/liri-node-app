@@ -1,4 +1,4 @@
-console.log('this is loaded')
+
 
 
 var Twitter = require('twitter');
@@ -17,12 +17,6 @@ var spotify = new Spotify({
   secret: '4415e27db7534628aa14c1f75b401831'
 });
 
-var request = require('request');
-request('http://www.omdbapi.com/?apikey=40e9cece&', function (error, response, body) {
-  console.log('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-});
 
 var omdb = {
   apikey:"40e9cece"
@@ -43,6 +37,6 @@ var spotifyKeys ={
 
 module.exports = {
   omdb,
-  twitterKeys
+  twitterKeys,
   spotifyKeys
 }

@@ -4,11 +4,9 @@ var request = require("request");
 // Grab the movieName which will always be the third node argument.
 //var movieName = process.argv[2];
 var Omdb = function(keys){
-  console.log(keys, "keys from omdb")
-  this.findmovie  = function(){
-    var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=" +
+  this.findMovie  = function(movieName){
+    var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=" + keys.apikey
     // This line is just to help us debug against the actual URL.
-    console.log(queryUrl);
 
     request(queryUrl, function(error, response, body) {
 

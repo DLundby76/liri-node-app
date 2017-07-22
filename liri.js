@@ -1,20 +1,29 @@
-console.log('liri.js file executed');
-var keys = require("./keys")
-console.log("keys wokring", keys)
-var Omdb = require("./app/omdb")
-var myOmdb = new Omdb(keys.omdb)
+
+var keys = require("./keys");
+
+var Omdb = require("./app/omdb");
+var myOmdb = new Omdb(keys.omdb);
+var UserTwitter = require("./app/twitter");
+var userTwitter = new UserTwitter(keys.twitterKeys);
+var UserSpotify = require("./app/spotify");
+var spotify = new UserSpotify(keys.spotifyKeys);
 var command = process.argv[2];
 var input = process.argv[3];
 
-console.log(command, input);
+
+
 
 switch (command) {
-  case "my-tweets":
+  case "user-tweets":
+    userTwitter.getTweets(input);
     return ;
   case "spotify-this-song":
+    spotify.findSong(input);
     return ;
-case "OMDB-Movies":
+  case "OMDB-Movies":
+    myOmdb.findMovie(input);
     return ;
+
 
 
 
